@@ -25,19 +25,23 @@ export default function AdminNavbar() {
   const navItems = [
     {
       name: 'Bookings',
-      href: '/admin/bookings',
+      href: '/admin/dashboard/bookings',
       icon: <ClipboardList size={18} />,
     },
     {
       name: 'Properties',
-      href: '/admin/properties',
+      href: '/admin/dashboard/properties',
       icon: <Building2 size={18} />,
     },
-    { name: 'Locations', href: '/admin/locations', icon: <MapPin size={18} /> },
-    { name: 'Mess', href: '/admin/mess', icon: <Soup size={18} /> },
+    {
+      name: 'Locations',
+      href: '/admin/dashboard/locations',
+      icon: <MapPin size={18} />,
+    },
+    { name: 'Mess', href: '/admin/dashboard/mess', icon: <Soup size={18} /> },
     {
       name: 'Contact',
-      href: '/admin/contact',
+      href: '/admin/dashboard/contact',
       icon: <MessageSquare size={18} />,
     },
   ]
@@ -46,7 +50,7 @@ export default function AdminNavbar() {
     <header className='bg-white shadow-sm border-b border-gray-200 relative z-50'>
       <div className='flex justify-between items-center px-4 sm:px-6 py-4'>
         {/* Left: Logo / Dashboard */}
-        <Link href='/admin' className='flex items-center gap-2'>
+        <Link href='/admin/dashboard' className='flex items-center gap-2'>
           <div className='w-8 h-8 bg-gradient-to-tr from-indigo-600 to-blue-500 rounded-md flex items-center justify-center'>
             <LayoutDashboard className='text-white' size={18} />
           </div>
