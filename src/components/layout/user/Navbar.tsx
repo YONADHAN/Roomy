@@ -11,7 +11,11 @@ export default function Navbar() {
 
   const navItems = [
     { name: 'Home', href: '/', icon: <Home size={18} /> },
-    { name: 'Find Your Room', href: '/find', icon: <Building2 size={18} /> },
+    {
+      name: 'Find Your mess',
+      href: '/mess',
+      icon: <Building2 size={18} />,
+    },
     { name: 'About', href: '/about', icon: <Info size={18} /> },
     { name: 'Contact', href: '/contact', icon: <Phone size={18} /> },
   ]
@@ -60,12 +64,12 @@ export default function Navbar() {
             <span className='hidden xl:inline'>Explore Rooms</span>
             <span className='xl:hidden'>Explore</span>
           </Link>
-          <Link
+          {/* <Link
             href='/owners'
             className='bg-blue-600 text-white font-semibold rounded-full px-4 xl:px-5 py-2 text-sm xl:text-base hover:bg-blue-700 transition whitespace-nowrap'
           >
             For Owners
-          </Link>
+          </Link> */}
         </div>
 
         {/* Mobile Menu Button */}

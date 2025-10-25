@@ -48,8 +48,8 @@ export default function ContactPage() {
             Have questions or feedback?
           </p>
           <p className='text-gray-600 max-w-2xl mx-auto'>
-            We'd love to hear from you. Fill out the form below and we'll
-            respond as soon as possible.
+            We&apos;d love to hear from you. Fill out the form below and
+            we&apos;ll respond as soon as possible.
           </p>
         </div>
 
