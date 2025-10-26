@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { MapPin, HelpCircle } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 
 const popularLocations = [
   'Kaloor',
@@ -30,7 +31,10 @@ const popularLocations = [
 
 export default function HeroSection() {
   const [selected, setSelected] = useState('')
-
+  const router = useRouter()
+  const navigateToLocations = () => {
+    router.push('/locations')
+  }
   return (
     <section className='bg-gradient-to-b from-blue-50 to-white py-16 text-center px-4 '>
       <motion.div
@@ -75,6 +79,7 @@ export default function HeroSection() {
 
         <motion.button
           whileHover={{ scale: 1.05 }}
+          onClick={navigateToLocations}
           className='bg-blue-600 text-white px-8 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 mx-auto shadow-md hover:bg-blue-700 transition'
         >
           <MapPin className='w-5 h-5' />

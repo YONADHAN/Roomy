@@ -129,8 +129,14 @@ export default function PropertyDetailsPage() {
             </div>
           </div>
           <div className='flex items-center gap-3'>
-            <button className='bg-blue-600 text-white font-semibold px-6 py-2.5 rounded-lg hover:bg-blue-700 transition'>
-              Book your visit
+            <button className='bg-blue-600 text-white font-semibold px-6 py-2.5 rounded-lg hover:bg-blue-700 transition flex gap-x-2 place-items-center'>
+              <div>
+                <Phone size={18} />
+              </div>{' '}
+              Call Now
+            </button>
+            <button className='bg-white text-blue-500 font-semibold px-6 py-2.5 rounded-lg hover:bg-blue-700 hover:text-white border transition flex gap-x-2 place-items-center'>
+              WhatsApp
             </button>
             <button className='flex items-center gap-2 border border-gray-300 px-4 py-2.5 rounded-lg hover:bg-gray-50 transition'>
               <Share2 size={18} />

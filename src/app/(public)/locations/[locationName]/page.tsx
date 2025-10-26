@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import {
   ChevronLeft,
   SlidersHorizontal,
@@ -265,6 +266,7 @@ const FilterSidebar = ({ isOpen, onClose, isMobile }) => {
 // Property Card Component
 const PropertyCard = ({ property }) => {
   const [currentImage, setCurrentImage] = useState(0)
+  const router = useRouter()
 
   return (
     <div className='bg-white rounded-xl shadow-md hover:shadow-xl transition overflow-hidden'>
@@ -363,7 +365,10 @@ const PropertyCard = ({ property }) => {
         </div>
 
         {/* View Button */}
-        <button className='w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition flex items-center justify-center gap-2'>
+        <button
+          onClick={() => router.push('/properties/propertey-name')}
+          className='w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition flex items-center justify-center gap-2'
+        >
           View Property
           <ChevronRight size={18} />
         </button>

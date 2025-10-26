@@ -10,9 +10,9 @@ import {
 
 // --- Data ---
 const locations = [
-  { name: 'Kakkanad', count: 76, link: '#' },
-  { name: 'Edappally', count: 53, link: '#' },
-  { name: 'Vyttila', count: 31, link: '#' },
+  { name: 'Kakkanad', count: 76, link: '/locations/Kakkanad' },
+  { name: 'Edappally', count: 53, link: '/locations/Edappally' },
+  { name: 'Vyttila', count: 31, link: '/locations/Vyttila' },
   { name: 'Kalamassery', count: 13, link: '#' },
   { name: 'Kaloor', count: 13, link: '#' },
   { name: 'Maradu', count: 9, link: '#' },
@@ -75,39 +75,39 @@ const LocationCard = ({
   </a>
 )
 
-// Component for the Features Section (from your second image)
-const FeaturesSection = ({ trustText }: { trustText: string }) => (
-  <section className='py-16 px-4 sm:px-6 lg:px-8 bg-white'>
-    <div className='max-w-6xl mx-auto'>
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-12'>
-        {features.map((feature, index) => (
-          <div
-            key={index}
-            className='bg-white rounded-2xl p-8 text-center flex flex-col items-center border border-gray-100'
-          >
-            <div className='p-4 bg-blue-100 text-blue-600 rounded-xl mb-6'>
-              <feature.icon className='w-8 h-8' />
-            </div>
-            <h3 className='text-xl font-semibold text-gray-800 mb-3'>
-              {feature.title}
-            </h3>
-            <p className='text-gray-600 leading-relaxed max-w-xs'>
-              {feature.description}
-            </p>
-          </div>
-        ))}
-      </div>
+// // Component for the Features Section (from your second image)
+// const FeaturesSection = ({ trustText }: { trustText: string }) => (
+//   <section className='py-16 px-4 sm:px-6 lg:px-8 bg-white'>
+//     <div className='max-w-6xl mx-auto'>
+//       <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-12'>
+//         {features.map((feature, index) => (
+//           <div
+//             key={index}
+//             className='bg-white rounded-2xl p-8 text-center flex flex-col items-center border border-gray-100'
+//           >
+//             <div className='p-4 bg-blue-100 text-blue-600 rounded-xl mb-6'>
+//               <feature.icon className='w-8 h-8' />
+//             </div>
+//             <h3 className='text-xl font-semibold text-gray-800 mb-3'>
+//               {feature.title}
+//             </h3>
+//             <p className='text-gray-600 leading-relaxed max-w-xs'>
+//               {feature.description}
+//             </p>
+//           </div>
+//         ))}
+//       </div>
 
-      <div className='text-center mt-12'>
-        <div className='inline-flex items-center px-6 py-3 bg-white rounded-full shadow-sm text-gray-700 text-md font-medium border border-gray-100'>
-          {trustText}
-        </div>
-      </div>
-    </div>
-  </section>
-)
+//       <div className='text-center mt-12'>
+//         <div className='inline-flex items-center px-6 py-3 bg-white rounded-full shadow-sm text-gray-700 text-md font-medium border border-gray-100'>
+//           {trustText}
+//         </div>
+//       </div>
+//     </div>
+//   </section>
+// )
 
-// --- Main Page Component ---
+// // --- Main Page Component ---
 const LocationsPage = () => {
   const totalProperties = locations.reduce((sum, loc) => sum + loc.count, 0)
   const totalLocations = locations.length // Placeholder, should be 29 per image
@@ -153,7 +153,7 @@ const LocationsPage = () => {
       </main>
 
       {/* 3. Features Section (From your second image) */}
-      <FeaturesSection trustText='Trusted by 5000+ bachelors in finding their perfect home' />
+      {/* <FeaturesSection trustText='Trusted by 5000+ bachelors in finding their perfect home' /> */}
 
       {/* 4. Placeholder Footer */}
       <footer className='bg-gray-800 text-white py-10'>
