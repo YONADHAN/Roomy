@@ -24,11 +24,6 @@ export default function AdminNavbar() {
 
   const navItems = [
     {
-      name: 'Bookings',
-      href: '/admin/dashboard/bookings',
-      icon: <ClipboardList size={18} />,
-    },
-    {
       name: 'Properties',
       href: '/admin/dashboard/properties',
       icon: <Building2 size={18} />,

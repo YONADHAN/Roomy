@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { Home, Building2, Info, Phone, Search, Menu, X } from 'lucide-react'
+import { Home, Building2, Phone, Search, Menu, X, MapPin } from 'lucide-react'
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -12,7 +12,8 @@ export default function Navbar() {
   const navItems = [
     { name: 'Home', href: '/', icon: <Home size={18} /> },
 
-    { name: 'About', href: '/about', icon: <Info size={18} /> },
+    { name: 'properties', href: '/properties', icon: <Building2 size={18} /> },
+    { name: 'locations', href: '/locations', icon: <MapPin size={18} /> },
     { name: 'Contact', href: '/contact', icon: <Phone size={18} /> },
   ]
 
