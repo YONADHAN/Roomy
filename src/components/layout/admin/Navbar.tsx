@@ -38,7 +38,6 @@ export default function AdminNavbar() {
       href: '/admin/dashboard/locations',
       icon: <MapPin size={18} />,
     },
-    { name: 'Mess', href: '/admin/dashboard/mess', icon: <Soup size={18} /> },
     {
       name: 'Contact',
       href: '/admin/dashboard/contact',

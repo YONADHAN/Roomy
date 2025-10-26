@@ -11,11 +11,7 @@ export default function Navbar() {
 
   const navItems = [
     { name: 'Home', href: '/', icon: <Home size={18} /> },
-    {
-      name: 'Find Your mess',
-      href: '/mess',
-      icon: <Building2 size={18} />,
-    },
+
     { name: 'About', href: '/about', icon: <Info size={18} /> },
     { name: 'Contact', href: '/contact', icon: <Phone size={18} /> },
   ]
