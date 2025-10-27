@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const connectToDatabase = async () => {
+const connectDB = async () => {
   if (mongoose.connections[0].readyState) return
 
   try {
@@ -11,4 +11,4 @@ const connectToDatabase = async () => {
   }
 }
 
-export default connectToDatabase
+export default connectDB

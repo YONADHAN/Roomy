@@ -2,24 +2,28 @@
 
 import React, { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
+import { useLocations } from '@/hooks/useLocations'
 
 export default function LocationView() {
-  const locations = [
-    { name: 'Edappally', slug: 'edappally', city: 'Kochi', propertyCount: 12 },
-    { name: 'Vytilla', slug: 'vytilla', city: 'Kochi', propertyCount: 8 },
-    {
-      name: 'Palarivattom',
-      slug: 'palarivattom',
-      city: 'Kochi',
-      propertyCount: 5,
-    },
-  ]
-
+  const { locationsQuery, deleteLocation } = useLocations()
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+  // Extract data, loading, and error states
+  const { data: locations, isLoading, isError } = locationsQuery
 
   const toggleDropdown = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
   }
+
+  const handleDelete = async (id: string) => {
+    if (confirm('Are you sure you want to delete this location?')) {
+      await deleteLocation.mutateAsync(id)
+    }
+  }
+
+  if (isLoading) return <p className='p-6'>Loading locations...</p>
+  if (isError)
+    return <p className='p-6 text-red-500'>Failed to load locations.</p>
 
   return (
     <div className='p-6 max-w-6xl mx-auto bg-white rounded-xl shadow-md space-y-6'>
@@ -65,8 +69,8 @@ export default function LocationView() {
             </tr>
           </thead>
           <tbody className='bg-white divide-y divide-gray-200'>
-            {locations.map((location, idx) => (
-              <tr key={idx} className='hover:bg-gray-50'>
+            {locations?.map((location: any, idx: number) => (
+              <tr key={location._id || idx} className='hover:bg-gray-50'>
                 <td className='px-6 py-4 whitespace-nowrap'>{location.name}</td>
                 <td className='px-6 py-4 whitespace-nowrap'>{location.slug}</td>
                 <td className='px-6 py-4 whitespace-nowrap'>{location.city}</td>
@@ -83,24 +87,18 @@ export default function LocationView() {
 
                   {openIndex === idx && (
                     <div className='absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg py-1 z-10'>
-                      <a
-                        href='#'
-                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
+                      <button
+                        className='block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
+                        onClick={() => console.log('Edit:', location._id)}
                       >
                         Edit
-                      </a>
-                      <a
-                        href='#'
-                        className='block px-4 py-2 text-sm text-red-600 hover:bg-gray-100'
+                      </button>
+                      <button
+                        className='block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100'
+                        onClick={() => handleDelete(location._id)}
                       >
                         Delete
-                      </a>
-                      <a
-                        href='#'
-                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
-                      >
-                        Block
-                      </a>
+                      </button>
                     </div>
                   )}
                 </td>
