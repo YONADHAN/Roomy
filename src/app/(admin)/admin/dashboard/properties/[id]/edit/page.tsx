@@ -1,4 +1,4 @@
-import PropertyForm from '@/components/specific/admin/Forms/property/propertyForm'
+import PropertyForm from '@/components/specific--need to change/admin/Forms/property/propertyForm'
 
 const page = () => {
   return (

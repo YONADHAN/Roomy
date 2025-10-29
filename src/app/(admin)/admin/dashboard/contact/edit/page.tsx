@@ -1,4 +1,4 @@
-import AdminForm from '@/components/specific/admin/Forms/contact/adminForm'
+import AdminForm from '@/components/specific--need to change/admin/Forms/contact/adminForm'
 const page = () => {
   return (
     <div>

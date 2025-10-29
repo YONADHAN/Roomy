@@ -1,6 +1,6 @@
 'use client'
 
-import LocationForm from '@/components/specific/admin/Forms/location/locationForm'
+import LocationForm from '@/components/specific--need to change/admin/Forms/location/locationForm'
 import { useLocations } from '@/hooks/useLocations'
 
 export default function AddLocationPage() {

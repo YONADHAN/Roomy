@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import connectDB from '@/lib/db/mongoDB/connection'
+import connectDB from '@/lib/db/mongoose/connection'
 import Location from '@/models/Location'
 
 // ✅ Get a location by ID

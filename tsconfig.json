@@ -31,8 +31,9 @@
     "**/*.mts",
     ".next\\dev/types/**/*.ts",
     ".next\\dev/types/**/*.ts",
-    "src/components/specific/user/LandingPage/FeatureSection",
-    "src/components/specific/user/LandingPage/HeroSection"
+    "src/components/specific--need to change/user/LandingPage/FeatureSection",
+    "src/components/specific--need to change/user/LandingPage/HeroSection",
+    "src/lib/utils/validations/locationSchema.ts----need to change"
   ],
   "exclude": ["node_modules"]
 }
